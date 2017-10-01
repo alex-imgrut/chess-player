@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Bob.h"
+#include "Board.h""
 
 using namespace sf;
 
@@ -15,8 +16,10 @@ private:
     Sprite m_BackgroundSprite;
     Texture m_BackgroundTexture;
 
-    // An instance of Bob
-    Bob m_Bob;
+    // Game objects
+    // TODO: define a list of objects
+//    Bob m_Bob;
+    Board board;
 
     // Private functions for internal use only
     void input(Event event);
@@ -29,5 +32,4 @@ public:
 
     // start will call all the private functions
     void start();
-
 };

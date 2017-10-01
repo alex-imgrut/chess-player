@@ -1,5 +1,4 @@
 #include "Engine.h"
-#include <Windows.h>
 
 Engine::Engine()
 {
@@ -11,10 +10,10 @@ Engine::Engine()
 
     // Load the background into the texture
     // Associate the sprite with the texture
-    Vector2f m_BackgroundPosition = Vector2f(50, 100);
-    m_BackgroundSprite.setPosition(m_BackgroundPosition);
-    m_BackgroundTexture.loadFromFile("Images/board.png");
-    m_BackgroundSprite.setTexture(m_BackgroundTexture);
+//    Vector2f m_BackgroundPosition = Vector2f(50, 100);
+//    m_BackgroundSprite.setPosition(m_BackgroundPosition);
+//    m_BackgroundTexture.loadFromFile("Images/board.png");
+//    m_BackgroundSprite.setTexture(m_BackgroundTexture);
 }
 
 /*
@@ -56,7 +55,9 @@ void Engine::input(Event event)
  */
 void Engine::update()
 {
-    m_Bob.update();
+    // TODO : Use a list of objects
+//    m_Bob.update();
+    board.update();
 }
 
 /*
@@ -69,8 +70,14 @@ void Engine::draw()
     m_Window.clear(Color::White);
 
     // Draw the background
-    m_Window.draw(m_BackgroundSprite);
-    m_Window.draw(m_Bob.getSprite());
+    // TODO : Use a list of objects
+//    m_Window.draw(m_BackgroundSprite);
+//    m_Window.draw(board.getSprite());
+    
+    std::array<sf::Sprite, 33> sprites = board.getSprites();
+    for (int i = 0; i < 33; i++) {
+        m_Window.draw(sprites[i]);
+    }
 
     // Show everything we have just drawn
     m_Window.display();
