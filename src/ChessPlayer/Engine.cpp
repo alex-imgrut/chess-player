@@ -3,10 +3,9 @@
 Engine::Engine()
 {
     // Get screen resolution and create main window
-    sf::Vector2f resolution;
-    resolution.x = sf::VideoMode::getDesktopMode().width;
-    resolution.y = sf::VideoMode::getDesktopMode().height;
-    m_Window.create(sf::VideoMode(resolution.x, resolution.y), "Chess Player", sf::Style::Default);
+    unsigned desktopWidth = sf::VideoMode::getDesktopMode().width;
+    unsigned desktopHeight = sf::VideoMode::getDesktopMode().height;
+    window.create(sf::VideoMode(desktopWidth, desktopHeight), "Chess Player", sf::Style::Default);
 }
 
 /*
@@ -18,11 +17,11 @@ void Engine::start()
 {
 
     // Run the program as long as the window is open
-    while (m_Window.isOpen())
+    while (window.isOpen())
     {
         // Check all the window's events that were triggered since the last iteration of the loop
         sf::Event event;
-        while (m_Window.pollEvent(event))
+        while (window.pollEvent(event))
         {
             input(event);
             update();
@@ -38,7 +37,7 @@ void Engine::start()
 void Engine::input(sf::Event event)
 {
     if (event.type == sf::Event::Closed) {
-        m_Window.close();
+        window.close();
     }
 }
 
@@ -59,12 +58,12 @@ void Engine::update()
 void Engine::draw()
 {
     // Rub out the last frame
-    m_Window.clear(sf::Color::White);
+    window.clear(sf::Color::White);
 
     // List of game objects
-    m_Window.draw(board.getSprite());
-    m_Window.draw(piece.getSprite());
+    window.draw(board.getSprite());
+    window.draw(piece.getSprite());
     
     // Show everything we have just drawn
-    m_Window.display();
+    window.display();
 }
