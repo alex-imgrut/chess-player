@@ -1,16 +1,21 @@
 #include "Piece.h"
 
-Piece::Piece() {}
-
-Piece::Piece(std::string filename, sf::Vector2f position) {
-    texture.loadFromFile(filename);
+Piece::Piece()
+{
+    // Associate a texture with the sprite
+    //texture.loadFromFile("Images/board.png");
+    texture.loadFromFile("Images/black_pawn.png");
     sprite.setTexture(texture);
-    this->position = position;
+
+    // Set the Piece initial position
+    position.x = 300;
+    position.y = 300;
+    sprite.setPosition(position);
 }
 
 void Piece::update() {
 }
 
 sf::Sprite Piece::getSprite() {
-    return sprite;
+    return Piece::sprite;
 }

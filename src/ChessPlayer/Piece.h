@@ -13,7 +13,6 @@ private:
 public:
 
     Piece();
-    Piece(std::string filename, sf::Vector2f position);
     void update();
     sf::Sprite getSprite();
 };
