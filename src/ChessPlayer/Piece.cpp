@@ -1,5 +1,9 @@
 #include "Piece.h"
 
+Piece::Piece() {
+    // ...
+}
+
 Piece::Piece(const std::string& file, sf::Vector2f position)
 {
     texture.loadFromFile(file);
@@ -10,6 +14,10 @@ Piece::Piece(const std::string& file, sf::Vector2f position)
 void Piece::update() {
 }
 
-sf::Sprite Piece::getSprite() {
-    return Piece::sprite;
+void Piece::draw(sf::RenderWindow& window)
+{
+// Why is texture lost at that moment? Texture is still there but no longer linked to sprite...
+    sprite.setTexture(texture);
+
+    window.draw(sprite);
 }
