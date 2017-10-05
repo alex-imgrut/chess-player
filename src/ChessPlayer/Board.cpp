@@ -8,8 +8,8 @@ Board::Board()
     sprite.setTexture(texture);
 
     // Set the Board's initial position
-    position.x = 100;
-    position.y = 100;
+    position.x = 0;
+    position.y = 0;
     sprite.setPosition(position);
 }
 

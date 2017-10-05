@@ -48,7 +48,7 @@ void Engine::update()
 {
     // Update all game objects
     board.update();
-    piece.update();
+    a1.update();
 }
 
 /*
@@ -62,8 +62,39 @@ void Engine::draw()
 
     // List of game objects
     window.draw(board.getSprite());
-    window.draw(piece.getSprite());
-    
+    window.draw(a1.getSprite());
+    window.draw(b1.getSprite());
+    window.draw(c1.getSprite());
+    window.draw(d1.getSprite());
+    window.draw(e1.getSprite());
+    window.draw(f1.getSprite());
+    window.draw(g1.getSprite());
+    window.draw(h1.getSprite());
+    window.draw(a2.getSprite());
+    window.draw(b2.getSprite());
+    window.draw(c2.getSprite());
+    window.draw(d2.getSprite());
+    window.draw(e2.getSprite());
+    window.draw(f2.getSprite());
+    window.draw(g2.getSprite());
+    window.draw(h2.getSprite());
+    window.draw(a7.getSprite());
+    window.draw(b7.getSprite());
+    window.draw(c7.getSprite());
+    window.draw(d7.getSprite());
+    window.draw(e7.getSprite());
+    window.draw(f7.getSprite());
+    window.draw(g7.getSprite());
+    window.draw(h7.getSprite());
+    window.draw(a8.getSprite());
+    window.draw(b8.getSprite());
+    window.draw(c8.getSprite());
+    window.draw(d8.getSprite());
+    window.draw(e8.getSprite());
+    window.draw(f8.getSprite());
+    window.draw(g8.getSprite());
+    window.draw(h8.getSprite());
+
     // Show everything we have just drawn
     window.display();
 }

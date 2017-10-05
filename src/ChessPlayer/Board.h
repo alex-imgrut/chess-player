@@ -6,6 +6,7 @@ class Board
 
 private:
     
+    
     sf::Vector2f position;
     sf::Texture texture;
     sf::Sprite sprite;
